@@ -25,8 +25,9 @@ function String() {
 
 function Number() {
   const props = useSpring({
-    number: 1,
-    from: { number: 0 }
+    number: 100,
+    from: { number: 0 },
+    config: { mass: 1, tension: 100, friction: 200 }
   });
   return <a.h1>{props.number}</a.h1>;
 }
@@ -38,7 +39,12 @@ function Scroll() {
 
   return (
     <a.div
-      style={{ height: 300, width: 200, overflow: "scroll" }}
+      style={{
+        height: 300,
+        width: 200,
+        border: "1px solid black",
+        overflow: "scroll"
+      }}
       scrollTop={props.scroll}
     >
       <h1>
@@ -62,7 +68,8 @@ function AsyncAnimation() {
 function ChainAnimation() {
   const props = useSpring({
     to: [{ opacity: 1, color: "green" }, { opacity: 0, color: "blue" }],
-    from: { opacity: 0, color: "red" }
+    from: { opacity: 0, color: "red" },
+    config: { mass: 10, tension: 250, friction: 100 }
   });
   return <a.h1 style={props}>Incredible!</a.h1>;
 }
@@ -103,13 +110,11 @@ function App() {
       <button onClick={() => setWidth(width - 100)}>-100</button>
       <button onClick={() => setWidth(width + 100)}>+100</button>
       <Box width={width} />
-      <br />
       <String />
       <Number />
       <Scroll />
       <AsyncAnimation />
       <ChainAnimation />
-      <Card />
     </>
   );
 }
