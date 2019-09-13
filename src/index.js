@@ -79,7 +79,7 @@ function Card() {
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
-    transform: `perspective(40px) rotateX(${flipped ? 180 : 0}deg)`,
+    transform: `perspective(400px) rotateX(${flipped ? 180 : 0}deg)`,
     config: { mass: 5, tension: 500, friction: 80 }
   });
   return (
@@ -117,6 +117,7 @@ function App() {
       <Scroll />
       <AsyncAnimation />
       <ChainAnimation />
+      {/* <Card /> */}
     </>
   );
 }
