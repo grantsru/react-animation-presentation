@@ -19,7 +19,7 @@ const ropeOptions = {
   to: { x: 0 }
 };
 const trapDownOptions = {
-  name: "Link",
+  name: "Trap",
   src: trap,
   from: { y: 0 },
   to: { y: "11vw" }
@@ -33,16 +33,17 @@ const trapUpOptions = {
 const linkOptions = {
   name: "Link",
   src: linkRight,
-  from: { y: "14vw" },
-  to: { x: "20vw" }
+  duration: 3,
+  from: { y: "13.5vw" },
+  to: { x: "55vw" }
 };
 const stopwatchOptions = {
   name: "Stopwatch",
   src: stopwatch,
   size: "2vw",
   ease: "Back.easeIn",
-  from: { x: "20vw", y: "15vw" },
-  to: { x: "20vw", y: "15vw", opacity: 0 }
+  from: { x: "25vw", y: "15vw" },
+  to: { x: "25vw", y: "15vw", opacity: 0 }
 };
 const wizzrobeOptions = {
   name: "Wizzrobe",
