@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { useSpring, a } from "react-spring";
 
+import Zelda from "./zelda";
+import Trail from "./trail";
+
 import goriya from "../public/img/goriya.gif";
 import armos from "../public/img/armos.gif";
-
-import "./styles.css";
 
 function Box(props) {
   const { width } = useSpring({ width: props.width });
@@ -33,8 +34,9 @@ function Number() {
 }
 function Scroll() {
   const props = useSpring({
-    scroll: 375,
-    from: { scroll: 0 }
+    scroll: 800,
+    from: { scroll: 0 },
+    config: { mass: 1, tension: 300, friction: 200 }
   });
 
   return (
@@ -109,15 +111,17 @@ function App() {
 
   return (
     <>
-      <button onClick={() => setWidth(width - 100)}>-100</button>
+      {/* <button onClick={() => setWidth(width - 100)}>-100</button>
       <button onClick={() => setWidth(width + 100)}>+100</button>
       <Box width={width} />
       <String />
       <Number />
       <Scroll />
       <AsyncAnimation />
-      <ChainAnimation />
+      <ChainAnimation /> */}
       {/* <Card /> */}
+      {/* <Trail /> */}
+      {/* <Zelda /> */}
     </>
   );
 }
