@@ -33,25 +33,27 @@ function Number() {
 }
 function Scroll() {
   const props = useSpring({
-    scroll: 300,
+    scroll: 375,
     from: { scroll: 0 }
   });
 
   return (
     <a.div
       style={{
-        height: 300,
-        width: 200,
+        height: 250,
+        width: 100,
         border: "1px solid black",
         overflow: "scroll"
       }}
       scrollTop={props.scroll}
     >
-      <h1>
-        React Spring is the future of animation in React. It is simply
-        incredible how easy it is to create awesome animations without any need
-        to fiddle with CSS.
-      </h1>
+      <div
+        style={{
+          height: 1000,
+          width: 100,
+          backgroundImage: "linear-gradient(red, yellow)"
+        }}
+      />
     </a.div>
   );
 }
